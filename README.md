@@ -1,0 +1,2 @@
+# fanaticServeData
+fanaticServeのデータファイルと作成用スクリプトを置いておく
