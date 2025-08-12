@@ -1,7 +1,9 @@
 # fanaticServeData
+
 fanaticServeのデータファイルと作成用スクリプトを置いておく
 
 ## Dataファイルの形式
+
 1. テキストファイル
 2. utf-8
 3. 改行はcrlf
