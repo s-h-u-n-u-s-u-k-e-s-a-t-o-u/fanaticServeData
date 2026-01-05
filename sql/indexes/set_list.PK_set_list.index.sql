@@ -1,0 +1,9 @@
+-- Index: PK_set_list (on dbo.set_list)
+-- Generated: 2026-01-05 22:44:55Z
+/****** Object:  Index [PK_set_list]    Script Date: 2026/01/05 22:44:55 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list]') AND name = N'PK_set_list')
+ALTER TABLE [dbo].[set_list] ADD  CONSTRAINT [PK_set_list] PRIMARY KEY CLUSTERED 
+(
+	[set_list_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
