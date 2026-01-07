@@ -1,8 +1,6 @@
--- DDL export generated on 2026-01-05 22:44:53Z
+-- DDL export generated on 2026-01-08 00:06:59Z
 
 -- Table: dbo.abstract_album
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[abstract_album]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album]') AND type in (N'U'))
@@ -128,8 +126,6 @@ END
 GO
 
 -- Table: dbo.abstract_album_link
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[abstract_album_link]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_link]') AND type in (N'U'))
@@ -146,7 +142,6 @@ CREATE TABLE [dbo].[abstract_album_link](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
-/****** Object:  Index [IX_abstract_album_link]    Script Date: 2026/01/05 22:44:53 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_link]') AND name = N'IX_abstract_album_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_album_link] ON [dbo].[abstract_album_link]
 (
@@ -310,8 +305,6 @@ END
 GO
 
 -- Table: dbo.abstract_album_note
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[abstract_album_note]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_note]') AND type in (N'U'))
@@ -442,8 +435,6 @@ END
 GO
 
 -- Table: dbo.abstract_event
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[abstract_event]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event]') AND type in (N'U'))
@@ -569,8 +560,6 @@ END
 GO
 
 -- Table: dbo.abstract_event_link
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[abstract_event_link]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_link]') AND type in (N'U'))
@@ -587,7 +576,6 @@ CREATE TABLE [dbo].[abstract_event_link](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
-/****** Object:  Index [IX_abstract_event_link]    Script Date: 2026/01/05 22:44:53 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_link]') AND name = N'IX_abstract_event_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_event_link] ON [dbo].[abstract_event_link]
 (
@@ -751,8 +739,6 @@ END
 GO
 
 -- Table: dbo.abstract_event_note
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[abstract_event_note]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_note]') AND type in (N'U'))
@@ -883,8 +869,6 @@ END
 GO
 
 -- Table: dbo.album
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[album]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[album]') AND type in (N'U'))
@@ -1127,8 +1111,6 @@ END
 GO
 
 -- Table: dbo.album_note
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[album_note]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[album_note]') AND type in (N'U'))
@@ -1259,8 +1241,6 @@ END
 GO
 
 -- Table: dbo.label
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[label]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[label]') AND type in (N'U'))
@@ -1419,8 +1399,6 @@ END
 GO
 
 -- Table: dbo.live_event
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[live_event]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[live_event]') AND type in (N'U'))
@@ -1602,8 +1580,6 @@ END
 GO
 
 -- Table: dbo.live_event_note
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[live_event_note]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[live_event_note]') AND type in (N'U'))
@@ -1734,8 +1710,6 @@ END
 GO
 
 -- Table: dbo.media
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[media]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[media]') AND type in (N'U'))
@@ -1812,8 +1786,6 @@ END
 GO
 
 -- Table: dbo.organization
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[organization]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[organization]') AND type in (N'U'))
@@ -1967,8 +1939,6 @@ END
 GO
 
 -- Table: dbo.person
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[person]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[person]') AND type in (N'U'))
@@ -2122,8 +2092,6 @@ END
 GO
 
 -- Table: dbo.role
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[role]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[role]') AND type in (N'U'))
@@ -2249,8 +2217,6 @@ END
 GO
 
 -- Table: dbo.roleOnAlbum
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[roleOnAlbum]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]') AND type in (N'U'))
@@ -2268,6 +2234,23 @@ CREATE TABLE [dbo].[roleOnAlbum](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]') AND name = N'IX_roleOnAlbum')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnAlbum] ON [dbo].[roleOnAlbum]
+(
+	[album_id] ASC,
+	[role_id] ASC,
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_album] FOREIGN KEY([album_id])
+REFERENCES [dbo].[album] ([album_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum] CHECK CONSTRAINT [FK_roleOnAlbum_album]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_person] FOREIGN KEY([person_id])
+REFERENCES [dbo].[person] ([person_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum] CHECK CONSTRAINT [FK_roleOnAlbum_person]
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
 ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_role] FOREIGN KEY([role_id])
 REFERENCES [dbo].[role] ([role_id])
@@ -2410,8 +2393,6 @@ END
 GO
 
 -- Table: dbo.roleOnSong
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[roleOnSong]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[roleOnSong]') AND type in (N'U'))
@@ -2422,14 +2403,35 @@ CREATE TABLE [dbo].[roleOnSong](
 	[role_id] [int] NOT NULL,
 	[person_id] [uniqueidentifier] NOT NULL,
 	[created_at] [datetime] NOT NULL,
-	[modified_at] [datetime] NOT NULL
+	[modified_at] [datetime] NOT NULL,
+ CONSTRAINT [PK_roleOnSong] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnSong]') AND name = N'IX_roleOnSong')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnSong] ON [dbo].[roleOnSong]
+(
+	[song_id] ASC,
+	[role_id] ASC,
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_person] FOREIGN KEY([person_id])
+REFERENCES [dbo].[person] ([person_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_person]
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
 ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_role] FOREIGN KEY([role_id])
 REFERENCES [dbo].[role] ([role_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
 ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_role]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_song] FOREIGN KEY([song_id])
+REFERENCES [dbo].[song] ([song_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_song]
 
 -- Column comment: dbo.roleOnSong.song_id
 IF EXISTS (
@@ -2566,9 +2568,210 @@ BEGIN
 END
 GO
 
+-- Table: dbo.roleOnTrack
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[roleOnTrack]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[roleOnTrack](
+	[Id] [int] NOT NULL,
+	[track_id] [uniqueidentifier] NOT NULL,
+	[role_id] [int] NOT NULL,
+	[person_id] [uniqueidentifier] NOT NULL,
+	[created_at] [datetime] NOT NULL,
+	[modified_at] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnTrack]') AND name = N'IX_roleOnTrack')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnTrack] ON [dbo].[roleOnTrack]
+(
+	[track_id] ASC,
+	[role_id] ASC,
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack]  WITH CHECK ADD  CONSTRAINT [FK_roleOnTrack_person] FOREIGN KEY([person_id])
+REFERENCES [dbo].[person] ([person_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack] CHECK CONSTRAINT [FK_roleOnTrack_person]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack]  WITH CHECK ADD  CONSTRAINT [FK_roleOnTrack_role] FOREIGN KEY([role_id])
+REFERENCES [dbo].[role] ([role_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack] CHECK CONSTRAINT [FK_roleOnTrack_role]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_track]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack]  WITH CHECK ADD  CONSTRAINT [FK_roleOnTrack_track] FOREIGN KEY([track_id])
+REFERENCES [dbo].[track] ([track_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_track]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack] CHECK CONSTRAINT [FK_roleOnTrack_track]
+
+-- Column comment: dbo.roleOnTrack.Id
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'roleOnTrack' AND c.name = 'Id'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'ID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'Id';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'ID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'Id';
+END
+GO
+
+-- Column comment: dbo.roleOnTrack.track_id
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'roleOnTrack' AND c.name = 'track_id'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'トラックID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'track_id';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'トラックID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'track_id';
+END
+GO
+
+-- Column comment: dbo.roleOnTrack.role_id
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'roleOnTrack' AND c.name = 'role_id'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'役割ID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'role_id';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'役割ID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'role_id';
+END
+GO
+
+-- Column comment: dbo.roleOnTrack.person_id
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'roleOnTrack' AND c.name = 'person_id'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'人物D', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'person_id';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'人物D', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'person_id';
+END
+GO
+
+-- Column comment: dbo.roleOnTrack.created_at
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'roleOnTrack' AND c.name = 'created_at'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'登録日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'created_at';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'登録日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'created_at';
+END
+GO
+
+-- Column comment: dbo.roleOnTrack.modified_at
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'roleOnTrack' AND c.name = 'modified_at'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'更新日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'modified_at';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'更新日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'roleOnTrack', 
+        @level2type=N'Column', @level2name=N'modified_at';
+END
+GO
+
 -- Table: dbo.set_list
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[set_list]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[set_list]') AND type in (N'U'))
@@ -2788,8 +2991,6 @@ END
 GO
 
 -- Table: dbo.set_list_dummy
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[set_list_dummy]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[set_list_dummy]') AND type in (N'U'))
@@ -2807,8 +3008,6 @@ CREATE TABLE [dbo].[set_list_dummy](
 END
 
 -- Table: dbo.set_list_note
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[set_list_note]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[set_list_note]') AND type in (N'U'))
@@ -2939,8 +3138,6 @@ END
 GO
 
 -- Table: dbo.site
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[site]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[site]') AND type in (N'U'))
@@ -3128,8 +3325,6 @@ END
 GO
 
 -- Table: dbo.song
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[song]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[song]') AND type in (N'U'))
@@ -3283,8 +3478,6 @@ END
 GO
 
 -- Table: dbo.song_note
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[song_note]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[song_note]') AND type in (N'U'))
@@ -3415,8 +3608,6 @@ END
 GO
 
 -- Table: dbo.track
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[track]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[track]') AND type in (N'U'))
@@ -3663,8 +3854,132 @@ BEGIN
 END
 GO
 
+-- Table: dbo.track_note
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[track_note]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[track_note](
+	[track_id] [uniqueidentifier] NOT NULL,
+	[note] [nvarchar](max) COLLATE Japanese_CI_AS NULL,
+	[created_at] [datetime] NOT NULL,
+	[modified_at] [datetime] NOT NULL,
+ CONSTRAINT [PK_track_note] PRIMARY KEY CLUSTERED 
+(
+	[track_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+
+-- Column comment: dbo.track_note.track_id
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'track_note' AND c.name = 'track_id'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'トラックID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'track_note', 
+        @level2type=N'Column', @level2name=N'track_id';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'トラックID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'track_note', 
+        @level2type=N'Column', @level2name=N'track_id';
+END
+GO
+
+-- Column comment: dbo.track_note.note
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'track_note' AND c.name = 'note'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'ノート', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'track_note', 
+        @level2type=N'Column', @level2name=N'note';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'ノート', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'track_note', 
+        @level2type=N'Column', @level2name=N'note';
+END
+GO
+
+-- Column comment: dbo.track_note.created_at
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'track_note' AND c.name = 'created_at'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'登録日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'track_note', 
+        @level2type=N'Column', @level2name=N'created_at';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'登録日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'track_note', 
+        @level2type=N'Column', @level2name=N'created_at';
+END
+GO
+
+-- Column comment: dbo.track_note.modified_at
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'track_note' AND c.name = 'modified_at'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'更新日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'track_note', 
+        @level2type=N'Column', @level2name=N'modified_at';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'更新日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'track_note', 
+        @level2type=N'Column', @level2name=N'modified_at';
+END
+GO
+
 -- Foreign Key: FK_abstract_album_link_abstract_album (on dbo.abstract_album_link)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_abstract_album_link_abstract_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[abstract_album_link]'))
 ALTER TABLE [dbo].[abstract_album_link]  WITH CHECK ADD  CONSTRAINT [FK_abstract_album_link_abstract_album] FOREIGN KEY([abstract_album_id])
 REFERENCES [dbo].[abstract_album] ([abstract_album_id])
@@ -3672,7 +3987,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[abstract_album_link] CHECK CONSTRAINT [FK_abstract_album_link_abstract_album]
 
 -- Foreign Key: FK_abstract_album_link_album (on dbo.abstract_album_link)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_abstract_album_link_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[abstract_album_link]'))
 ALTER TABLE [dbo].[abstract_album_link]  WITH CHECK ADD  CONSTRAINT [FK_abstract_album_link_album] FOREIGN KEY([album_id])
 REFERENCES [dbo].[album] ([album_id])
@@ -3680,7 +3994,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[abstract_album_link] CHECK CONSTRAINT [FK_abstract_album_link_album]
 
 -- Foreign Key: FK_abstract_album_note_abstract_album (on dbo.abstract_album_note)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_abstract_album_note_abstract_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[abstract_album_note]'))
 ALTER TABLE [dbo].[abstract_album_note]  WITH CHECK ADD  CONSTRAINT [FK_abstract_album_note_abstract_album] FOREIGN KEY([album_id])
 REFERENCES [dbo].[abstract_album] ([abstract_album_id])
@@ -3688,7 +4001,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[abstract_album_note] CHECK CONSTRAINT [FK_abstract_album_note_abstract_album]
 
 -- Foreign Key: FK_abstract_event_link_abstract_event (on dbo.abstract_event_link)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_abstract_event_link_abstract_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[abstract_event_link]'))
 ALTER TABLE [dbo].[abstract_event_link]  WITH CHECK ADD  CONSTRAINT [FK_abstract_event_link_abstract_event] FOREIGN KEY([abstract_event_id])
 REFERENCES [dbo].[abstract_event] ([abstract_event_id])
@@ -3696,7 +4008,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[abstract_event_link] CHECK CONSTRAINT [FK_abstract_event_link_abstract_event]
 
 -- Foreign Key: FK_abstract_event_link_live_event (on dbo.abstract_event_link)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_abstract_event_link_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[abstract_event_link]'))
 ALTER TABLE [dbo].[abstract_event_link]  WITH CHECK ADD  CONSTRAINT [FK_abstract_event_link_live_event] FOREIGN KEY([event_id])
 REFERENCES [dbo].[live_event] ([live_event_id])
@@ -3704,7 +4015,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[abstract_event_link] CHECK CONSTRAINT [FK_abstract_event_link_live_event]
 
 -- Foreign Key: FK_abstract_event_note_abstract_event (on dbo.abstract_event_note)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_abstract_event_note_abstract_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[abstract_event_note]'))
 ALTER TABLE [dbo].[abstract_event_note]  WITH CHECK ADD  CONSTRAINT [FK_abstract_event_note_abstract_event] FOREIGN KEY([abstract_event_id])
 REFERENCES [dbo].[abstract_event] ([abstract_event_id])
@@ -3712,7 +4022,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[abstract_event_note] CHECK CONSTRAINT [FK_abstract_event_note_abstract_event]
 
 -- Foreign Key: FK_album_media (on dbo.album)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_album_media]') AND parent_object_id = OBJECT_ID(N'[dbo].[album]'))
 ALTER TABLE [dbo].[album]  WITH CHECK ADD  CONSTRAINT [FK_album_media] FOREIGN KEY([media_type])
 REFERENCES [dbo].[media] ([media_type])
@@ -3720,7 +4029,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[album] CHECK CONSTRAINT [FK_album_media]
 
 -- Foreign Key: FK_album_note_album (on dbo.album_note)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_album_note_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[album_note]'))
 ALTER TABLE [dbo].[album_note]  WITH CHECK ADD  CONSTRAINT [FK_album_note_album] FOREIGN KEY([album_id])
 REFERENCES [dbo].[album] ([album_id])
@@ -3728,7 +4036,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[album_note] CHECK CONSTRAINT [FK_album_note_album]
 
 -- Foreign Key: FK_label_organization_id (on dbo.label)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_label_organization_id]') AND parent_object_id = OBJECT_ID(N'[dbo].[label]'))
 ALTER TABLE [dbo].[label]  WITH CHECK ADD  CONSTRAINT [FK_label_organization_id] FOREIGN KEY([organization_id])
 REFERENCES [dbo].[organization] ([organization_id])
@@ -3736,31 +4043,76 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[label] CHECK CONSTRAINT [FK_label_organization_id]
 
 -- Foreign Key: FK_live_event_note_live_event (on dbo.live_event_note)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_live_event_note_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[live_event_note]'))
 ALTER TABLE [dbo].[live_event_note]  WITH CHECK ADD  CONSTRAINT [FK_live_event_note_live_event] FOREIGN KEY([live_event_id])
 REFERENCES [dbo].[live_event] ([live_event_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_live_event_note_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[live_event_note]'))
 ALTER TABLE [dbo].[live_event_note] CHECK CONSTRAINT [FK_live_event_note_live_event]
 
+-- Foreign Key: FK_roleOnAlbum_album (on dbo.roleOnAlbum)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_album] FOREIGN KEY([album_id])
+REFERENCES [dbo].[album] ([album_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum] CHECK CONSTRAINT [FK_roleOnAlbum_album]
+
+-- Foreign Key: FK_roleOnAlbum_person (on dbo.roleOnAlbum)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_person] FOREIGN KEY([person_id])
+REFERENCES [dbo].[person] ([person_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum] CHECK CONSTRAINT [FK_roleOnAlbum_person]
+
 -- Foreign Key: FK_roleOnAlbum_role (on dbo.roleOnAlbum)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
 ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_role] FOREIGN KEY([role_id])
 REFERENCES [dbo].[role] ([role_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
 ALTER TABLE [dbo].[roleOnAlbum] CHECK CONSTRAINT [FK_roleOnAlbum_role]
 
+-- Foreign Key: FK_roleOnSong_person (on dbo.roleOnSong)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_person] FOREIGN KEY([person_id])
+REFERENCES [dbo].[person] ([person_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_person]
+
 -- Foreign Key: FK_roleOnSong_role (on dbo.roleOnSong)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
 ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_role] FOREIGN KEY([role_id])
 REFERENCES [dbo].[role] ([role_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
 ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_role]
 
+-- Foreign Key: FK_roleOnSong_song (on dbo.roleOnSong)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_song] FOREIGN KEY([song_id])
+REFERENCES [dbo].[song] ([song_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_song]
+
+-- Foreign Key: FK_roleOnTrack_person (on dbo.roleOnTrack)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack]  WITH CHECK ADD  CONSTRAINT [FK_roleOnTrack_person] FOREIGN KEY([person_id])
+REFERENCES [dbo].[person] ([person_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack] CHECK CONSTRAINT [FK_roleOnTrack_person]
+
+-- Foreign Key: FK_roleOnTrack_role (on dbo.roleOnTrack)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack]  WITH CHECK ADD  CONSTRAINT [FK_roleOnTrack_role] FOREIGN KEY([role_id])
+REFERENCES [dbo].[role] ([role_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack] CHECK CONSTRAINT [FK_roleOnTrack_role]
+
+-- Foreign Key: FK_roleOnTrack_track (on dbo.roleOnTrack)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_track]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack]  WITH CHECK ADD  CONSTRAINT [FK_roleOnTrack_track] FOREIGN KEY([track_id])
+REFERENCES [dbo].[track] ([track_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnTrack_track]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnTrack]'))
+ALTER TABLE [dbo].[roleOnTrack] CHECK CONSTRAINT [FK_roleOnTrack_track]
+
 -- Foreign Key: FK_set_list_live_event (on dbo.set_list)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
 ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_live_event] FOREIGN KEY([live_event_id])
 REFERENCES [dbo].[live_event] ([live_event_id])
@@ -3768,7 +4120,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_live_event]
 
 -- Foreign Key: FK_set_list_song (on dbo.set_list)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
 ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_song] FOREIGN KEY([song_id])
 REFERENCES [dbo].[song] ([song_id])
@@ -3776,7 +4127,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_song]
 
 -- Foreign Key: FK_set_list_note_set_list (on dbo.set_list_note)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note]  WITH CHECK ADD  CONSTRAINT [FK_set_list_note_set_list] FOREIGN KEY([set_list_id])
 REFERENCES [dbo].[set_list] ([set_list_id])
@@ -3784,7 +4134,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[set_list_note] CHECK CONSTRAINT [FK_set_list_note_set_list]
 
 -- Foreign Key: FK_song_note_song (on dbo.song_note)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_song_note_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[song_note]'))
 ALTER TABLE [dbo].[song_note]  WITH CHECK ADD  CONSTRAINT [FK_song_note_song] FOREIGN KEY([song_id])
 REFERENCES [dbo].[song] ([song_id])
@@ -3792,7 +4141,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[song_note] CHECK CONSTRAINT [FK_song_note_song]
 
 -- Foreign Key: FK_track_album (on dbo.track)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_track_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[track]'))
 ALTER TABLE [dbo].[track]  WITH CHECK ADD  CONSTRAINT [FK_track_album] FOREIGN KEY([album_id])
 REFERENCES [dbo].[album] ([album_id])
@@ -3800,7 +4148,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[track] CHECK CONSTRAINT [FK_track_album]
 
 -- Foreign Key: FK_track_song (on dbo.track)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_track_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[track]'))
 ALTER TABLE [dbo].[track]  WITH CHECK ADD  CONSTRAINT [FK_track_song] FOREIGN KEY([song_id])
 REFERENCES [dbo].[song] ([song_id])
@@ -3808,8 +4155,6 @@ IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[
 ALTER TABLE [dbo].[track] CHECK CONSTRAINT [FK_track_song]
 
 -- Index: PK_abstract_album (on dbo.abstract_album)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [PK_abstract_album]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album]') AND name = N'PK_abstract_album')
 ALTER TABLE [dbo].[abstract_album] ADD  CONSTRAINT [PK_abstract_album] PRIMARY KEY CLUSTERED 
 (
@@ -3817,8 +4162,6 @@ ALTER TABLE [dbo].[abstract_album] ADD  CONSTRAINT [PK_abstract_album] PRIMARY K
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: IX_abstract_album_link (on dbo.abstract_album_link)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [IX_abstract_album_link]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_link]') AND name = N'IX_abstract_album_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_album_link] ON [dbo].[abstract_album_link]
 (
@@ -3827,8 +4170,6 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_album_link] ON [dbo].[abstract_alb
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_abstract_album_link (on dbo.abstract_album_link)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [PK_abstract_album_link]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_link]') AND name = N'PK_abstract_album_link')
 ALTER TABLE [dbo].[abstract_album_link] ADD  CONSTRAINT [PK_abstract_album_link] PRIMARY KEY CLUSTERED 
 (
@@ -3836,8 +4177,6 @@ ALTER TABLE [dbo].[abstract_album_link] ADD  CONSTRAINT [PK_abstract_album_link]
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_abstract_album_note (on dbo.abstract_album_note)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [PK_abstract_album_note]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_note]') AND name = N'PK_abstract_album_note')
 ALTER TABLE [dbo].[abstract_album_note] ADD  CONSTRAINT [PK_abstract_album_note] PRIMARY KEY CLUSTERED 
 (
@@ -3845,8 +4184,6 @@ ALTER TABLE [dbo].[abstract_album_note] ADD  CONSTRAINT [PK_abstract_album_note]
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_abstract_event (on dbo.abstract_event)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [PK_abstract_event]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event]') AND name = N'PK_abstract_event')
 ALTER TABLE [dbo].[abstract_event] ADD  CONSTRAINT [PK_abstract_event] PRIMARY KEY CLUSTERED 
 (
@@ -3854,8 +4191,6 @@ ALTER TABLE [dbo].[abstract_event] ADD  CONSTRAINT [PK_abstract_event] PRIMARY K
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: IX_abstract_event_link (on dbo.abstract_event_link)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [IX_abstract_event_link]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_link]') AND name = N'IX_abstract_event_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_event_link] ON [dbo].[abstract_event_link]
 (
@@ -3864,8 +4199,6 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_event_link] ON [dbo].[abstract_eve
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_abstract_event_link (on dbo.abstract_event_link)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [PK_abstract_event_link]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_link]') AND name = N'PK_abstract_event_link')
 ALTER TABLE [dbo].[abstract_event_link] ADD  CONSTRAINT [PK_abstract_event_link] PRIMARY KEY CLUSTERED 
 (
@@ -3873,8 +4206,6 @@ ALTER TABLE [dbo].[abstract_event_link] ADD  CONSTRAINT [PK_abstract_event_link]
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_abstract_event_note (on dbo.abstract_event_note)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [PK_abstract_event_note]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_note]') AND name = N'PK_abstract_event_note')
 ALTER TABLE [dbo].[abstract_event_note] ADD  CONSTRAINT [PK_abstract_event_note] PRIMARY KEY CLUSTERED 
 (
@@ -3882,8 +4213,6 @@ ALTER TABLE [dbo].[abstract_event_note] ADD  CONSTRAINT [PK_abstract_event_note]
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_album (on dbo.album)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_album]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[album]') AND name = N'PK_album')
 ALTER TABLE [dbo].[album] ADD  CONSTRAINT [PK_album] PRIMARY KEY CLUSTERED 
 (
@@ -3891,8 +4220,6 @@ ALTER TABLE [dbo].[album] ADD  CONSTRAINT [PK_album] PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_album_note (on dbo.album_note)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_album_note]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[album_note]') AND name = N'PK_album_note')
 ALTER TABLE [dbo].[album_note] ADD  CONSTRAINT [PK_album_note] PRIMARY KEY CLUSTERED 
 (
@@ -3900,8 +4227,6 @@ ALTER TABLE [dbo].[album_note] ADD  CONSTRAINT [PK_album_note] PRIMARY KEY CLUST
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_label (on dbo.label)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_label]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[label]') AND name = N'PK_label')
 ALTER TABLE [dbo].[label] ADD  CONSTRAINT [PK_label] PRIMARY KEY CLUSTERED 
 (
@@ -3909,8 +4234,6 @@ ALTER TABLE [dbo].[label] ADD  CONSTRAINT [PK_label] PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_live_event (on dbo.live_event)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_live_event]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[live_event]') AND name = N'PK_live_event')
 ALTER TABLE [dbo].[live_event] ADD  CONSTRAINT [PK_live_event] PRIMARY KEY CLUSTERED 
 (
@@ -3918,8 +4241,6 @@ ALTER TABLE [dbo].[live_event] ADD  CONSTRAINT [PK_live_event] PRIMARY KEY CLUST
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_live_event_note (on dbo.live_event_note)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_live_event_note]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[live_event_note]') AND name = N'PK_live_event_note')
 ALTER TABLE [dbo].[live_event_note] ADD  CONSTRAINT [PK_live_event_note] PRIMARY KEY CLUSTERED 
 (
@@ -3927,8 +4248,6 @@ ALTER TABLE [dbo].[live_event_note] ADD  CONSTRAINT [PK_live_event_note] PRIMARY
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_media (on dbo.media)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_media]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[media]') AND name = N'PK_media')
 ALTER TABLE [dbo].[media] ADD  CONSTRAINT [PK_media] PRIMARY KEY CLUSTERED 
 (
@@ -3936,8 +4255,6 @@ ALTER TABLE [dbo].[media] ADD  CONSTRAINT [PK_media] PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_organization (on dbo.organization)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_organization]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[organization]') AND name = N'PK_organization')
 ALTER TABLE [dbo].[organization] ADD  CONSTRAINT [PK_organization] PRIMARY KEY CLUSTERED 
 (
@@ -3945,8 +4262,6 @@ ALTER TABLE [dbo].[organization] ADD  CONSTRAINT [PK_organization] PRIMARY KEY C
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_person (on dbo.person)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_person]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[person]') AND name = N'PK_person')
 ALTER TABLE [dbo].[person] ADD  CONSTRAINT [PK_person] PRIMARY KEY CLUSTERED 
 (
@@ -3954,26 +4269,61 @@ ALTER TABLE [dbo].[person] ADD  CONSTRAINT [PK_person] PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_role (on dbo.role)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_role]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[role]') AND name = N'PK_role')
 ALTER TABLE [dbo].[role] ADD  CONSTRAINT [PK_role] PRIMARY KEY CLUSTERED 
 (
 	[role_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
+-- Index: IX_roleOnAlbum (on dbo.roleOnAlbum)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]') AND name = N'IX_roleOnAlbum')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnAlbum] ON [dbo].[roleOnAlbum]
+(
+	[album_id] ASC,
+	[role_id] ASC,
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
 -- Index: PK_roleOnAlbum (on dbo.roleOnAlbum)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_roleOnAlbum]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]') AND name = N'PK_roleOnAlbum')
 ALTER TABLE [dbo].[roleOnAlbum] ADD  CONSTRAINT [PK_roleOnAlbum] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
+-- Index: IX_roleOnSong (on dbo.roleOnSong)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnSong]') AND name = N'IX_roleOnSong')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnSong] ON [dbo].[roleOnSong]
+(
+	[song_id] ASC,
+	[role_id] ASC,
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+-- Index: PK_roleOnSong (on dbo.roleOnSong)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnSong]') AND name = N'PK_roleOnSong')
+ALTER TABLE [dbo].[roleOnSong] ADD  CONSTRAINT [PK_roleOnSong] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+-- Index: IX_roleOnTrack (on dbo.roleOnTrack)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnTrack]') AND name = N'IX_roleOnTrack')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnTrack] ON [dbo].[roleOnTrack]
+(
+	[track_id] ASC,
+	[role_id] ASC,
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+-- Index: PK__roleOnTr__3214EC0745428843 (on dbo.roleOnTrack)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnTrack]') AND name = N'PK__roleOnTr__3214EC0745428843')
+ALTER TABLE [dbo].[roleOnTrack] ADD PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
 -- Index: PK_set_list (on dbo.set_list)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_set_list]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list]') AND name = N'PK_set_list')
 ALTER TABLE [dbo].[set_list] ADD  CONSTRAINT [PK_set_list] PRIMARY KEY CLUSTERED 
 (
@@ -3981,8 +4331,6 @@ ALTER TABLE [dbo].[set_list] ADD  CONSTRAINT [PK_set_list] PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_set_list_note (on dbo.set_list_note)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_set_list_note]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list_note]') AND name = N'PK_set_list_note')
 ALTER TABLE [dbo].[set_list_note] ADD  CONSTRAINT [PK_set_list_note] PRIMARY KEY CLUSTERED 
 (
@@ -3990,8 +4338,6 @@ ALTER TABLE [dbo].[set_list_note] ADD  CONSTRAINT [PK_set_list_note] PRIMARY KEY
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_site (on dbo.site)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_site]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[site]') AND name = N'PK_site')
 ALTER TABLE [dbo].[site] ADD  CONSTRAINT [PK_site] PRIMARY KEY CLUSTERED 
 (
@@ -3999,8 +4345,6 @@ ALTER TABLE [dbo].[site] ADD  CONSTRAINT [PK_site] PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: UQ_site_site_id (on dbo.site)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [UQ_site_site_id]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[site]') AND name = N'UQ_site_site_id')
 ALTER TABLE [dbo].[site] ADD  CONSTRAINT [UQ_site_site_id] UNIQUE NONCLUSTERED 
 (
@@ -4009,8 +4353,6 @@ ALTER TABLE [dbo].[site] ADD  CONSTRAINT [UQ_site_site_id] UNIQUE NONCLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_song (on dbo.song)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_song]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[song]') AND name = N'PK_song')
 ALTER TABLE [dbo].[song] ADD  CONSTRAINT [PK_song] PRIMARY KEY CLUSTERED 
 (
@@ -4018,8 +4360,6 @@ ALTER TABLE [dbo].[song] ADD  CONSTRAINT [PK_song] PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_song_note (on dbo.song_note)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_song_note]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[song_note]') AND name = N'PK_song_note')
 ALTER TABLE [dbo].[song_note] ADD  CONSTRAINT [PK_song_note] PRIMARY KEY CLUSTERED 
 (
@@ -4027,10 +4367,15 @@ ALTER TABLE [dbo].[song_note] ADD  CONSTRAINT [PK_song_note] PRIMARY KEY CLUSTER
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 -- Index: PK_track (on dbo.track)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_track]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[track]') AND name = N'PK_track')
 ALTER TABLE [dbo].[track] ADD  CONSTRAINT [PK_track] PRIMARY KEY CLUSTERED 
+(
+	[track_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+-- Index: PK_track_note (on dbo.track_note)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[track_note]') AND name = N'PK_track_note')
+ALTER TABLE [dbo].[track_note] ADD  CONSTRAINT [PK_track_note] PRIMARY KEY CLUSTERED 
 (
 	[track_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]

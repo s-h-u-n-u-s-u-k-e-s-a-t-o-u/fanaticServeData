@@ -1,6 +1,4 @@
 -- Index: PK_set_list_note (on dbo.set_list_note)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_set_list_note]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list_note]') AND name = N'PK_set_list_note')
 ALTER TABLE [dbo].[set_list_note] ADD  CONSTRAINT [PK_set_list_note] PRIMARY KEY CLUSTERED 
 (

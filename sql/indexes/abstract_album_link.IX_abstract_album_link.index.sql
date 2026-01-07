@@ -1,6 +1,4 @@
 -- Index: IX_abstract_album_link (on dbo.abstract_album_link)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [IX_abstract_album_link]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_link]') AND name = N'IX_abstract_album_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_album_link] ON [dbo].[abstract_album_link]
 (

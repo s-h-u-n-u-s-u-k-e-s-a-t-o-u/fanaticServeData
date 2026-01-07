@@ -1,6 +1,4 @@
 -- Index: IX_abstract_event_link (on dbo.abstract_event_link)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [IX_abstract_event_link]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_link]') AND name = N'IX_abstract_event_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_event_link] ON [dbo].[abstract_event_link]
 (

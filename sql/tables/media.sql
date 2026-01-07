@@ -1,6 +1,4 @@
 -- Table: dbo.media
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[media]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[media]') AND type in (N'U'))

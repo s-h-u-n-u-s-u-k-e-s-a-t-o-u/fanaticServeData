@@ -1,6 +1,4 @@
 -- Table: dbo.roleOnSong
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[roleOnSong]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[roleOnSong]') AND type in (N'U'))
@@ -11,14 +9,35 @@ CREATE TABLE [dbo].[roleOnSong](
 	[role_id] [int] NOT NULL,
 	[person_id] [uniqueidentifier] NOT NULL,
 	[created_at] [datetime] NOT NULL,
-	[modified_at] [datetime] NOT NULL
+	[modified_at] [datetime] NOT NULL,
+ CONSTRAINT [PK_roleOnSong] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnSong]') AND name = N'IX_roleOnSong')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnSong] ON [dbo].[roleOnSong]
+(
+	[song_id] ASC,
+	[role_id] ASC,
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_person] FOREIGN KEY([person_id])
+REFERENCES [dbo].[person] ([person_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_person]
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
 ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_role] FOREIGN KEY([role_id])
 REFERENCES [dbo].[role] ([role_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
 ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_role]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong]  WITH CHECK ADD  CONSTRAINT [FK_roleOnSong_song] FOREIGN KEY([song_id])
+REFERENCES [dbo].[song] ([song_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnSong_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnSong]'))
+ALTER TABLE [dbo].[roleOnSong] CHECK CONSTRAINT [FK_roleOnSong_song]
 
 -- Column comment: dbo.roleOnSong.song_id
 IF EXISTS (

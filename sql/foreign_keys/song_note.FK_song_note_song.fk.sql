@@ -1,5 +1,4 @@
 -- Foreign Key: FK_song_note_song (on dbo.song_note)
--- Generated: 2026-01-05 22:44:54Z
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_song_note_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[song_note]'))
 ALTER TABLE [dbo].[song_note]  WITH CHECK ADD  CONSTRAINT [FK_song_note_song] FOREIGN KEY([song_id])
 REFERENCES [dbo].[song] ([song_id])

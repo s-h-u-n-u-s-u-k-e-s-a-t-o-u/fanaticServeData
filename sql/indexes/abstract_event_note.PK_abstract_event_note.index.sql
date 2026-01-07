@@ -1,6 +1,4 @@
 -- Index: PK_abstract_event_note (on dbo.abstract_event_note)
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Index [PK_abstract_event_note]    Script Date: 2026/01/05 22:44:54 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_note]') AND name = N'PK_abstract_event_note')
 ALTER TABLE [dbo].[abstract_event_note] ADD  CONSTRAINT [PK_abstract_event_note] PRIMARY KEY CLUSTERED 
 (

@@ -1,6 +1,4 @@
 -- Index: PK_track (on dbo.track)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_track]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[track]') AND name = N'PK_track')
 ALTER TABLE [dbo].[track] ADD  CONSTRAINT [PK_track] PRIMARY KEY CLUSTERED 
 (

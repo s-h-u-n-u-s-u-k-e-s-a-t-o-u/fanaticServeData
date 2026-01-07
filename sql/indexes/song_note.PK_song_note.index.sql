@@ -1,6 +1,4 @@
 -- Index: PK_song_note (on dbo.song_note)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_song_note]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[song_note]') AND name = N'PK_song_note')
 ALTER TABLE [dbo].[song_note] ADD  CONSTRAINT [PK_song_note] PRIMARY KEY CLUSTERED 
 (

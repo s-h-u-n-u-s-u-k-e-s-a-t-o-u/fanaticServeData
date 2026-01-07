@@ -1,6 +1,4 @@
 -- Index: PK_roleOnAlbum (on dbo.roleOnAlbum)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_roleOnAlbum]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]') AND name = N'PK_roleOnAlbum')
 ALTER TABLE [dbo].[roleOnAlbum] ADD  CONSTRAINT [PK_roleOnAlbum] PRIMARY KEY CLUSTERED 
 (

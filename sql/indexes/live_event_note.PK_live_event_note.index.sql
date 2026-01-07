@@ -1,6 +1,4 @@
 -- Index: PK_live_event_note (on dbo.live_event_note)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_live_event_note]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[live_event_note]') AND name = N'PK_live_event_note')
 ALTER TABLE [dbo].[live_event_note] ADD  CONSTRAINT [PK_live_event_note] PRIMARY KEY CLUSTERED 
 (

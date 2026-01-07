@@ -1,6 +1,4 @@
 -- Table: dbo.roleOnAlbum
--- Generated: 2026-01-05 22:44:54Z
-/****** Object:  Table [dbo].[roleOnAlbum]    Script Date: 2026/01/05 22:44:54 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]') AND type in (N'U'))
@@ -18,6 +16,23 @@ CREATE TABLE [dbo].[roleOnAlbum](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]') AND name = N'IX_roleOnAlbum')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnAlbum] ON [dbo].[roleOnAlbum]
+(
+	[album_id] ASC,
+	[role_id] ASC,
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_album] FOREIGN KEY([album_id])
+REFERENCES [dbo].[album] ([album_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum] CHECK CONSTRAINT [FK_roleOnAlbum_album]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_person] FOREIGN KEY([person_id])
+REFERENCES [dbo].[person] ([person_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_person]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
+ALTER TABLE [dbo].[roleOnAlbum] CHECK CONSTRAINT [FK_roleOnAlbum_person]
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_role]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
 ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_role] FOREIGN KEY([role_id])
 REFERENCES [dbo].[role] ([role_id])

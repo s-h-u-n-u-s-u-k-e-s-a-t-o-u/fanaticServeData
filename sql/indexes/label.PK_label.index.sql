@@ -1,6 +1,4 @@
 -- Index: PK_label (on dbo.label)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_label]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[label]') AND name = N'PK_label')
 ALTER TABLE [dbo].[label] ADD  CONSTRAINT [PK_label] PRIMARY KEY CLUSTERED 
 (

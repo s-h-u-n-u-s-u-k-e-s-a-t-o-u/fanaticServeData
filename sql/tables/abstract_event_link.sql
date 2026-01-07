@@ -1,6 +1,4 @@
 -- Table: dbo.abstract_event_link
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[abstract_event_link]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_link]') AND type in (N'U'))
@@ -17,7 +15,6 @@ CREATE TABLE [dbo].[abstract_event_link](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 END
-/****** Object:  Index [IX_abstract_event_link]    Script Date: 2026/01/05 22:44:53 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_link]') AND name = N'IX_abstract_event_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_event_link] ON [dbo].[abstract_event_link]
 (

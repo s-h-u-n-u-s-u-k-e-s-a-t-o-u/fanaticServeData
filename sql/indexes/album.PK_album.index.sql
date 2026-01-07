@@ -1,6 +1,4 @@
 -- Index: PK_album (on dbo.album)
--- Generated: 2026-01-05 22:44:55Z
-/****** Object:  Index [PK_album]    Script Date: 2026/01/05 22:44:55 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[album]') AND name = N'PK_album')
 ALTER TABLE [dbo].[album] ADD  CONSTRAINT [PK_album] PRIMARY KEY CLUSTERED 
 (

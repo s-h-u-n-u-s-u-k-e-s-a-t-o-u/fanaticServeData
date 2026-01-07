@@ -1,6 +1,4 @@
 -- Table: dbo.album
--- Generated: 2026-01-05 22:44:53Z
-/****** Object:  Table [dbo].[album]    Script Date: 2026/01/05 22:44:53 ******/
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[album]') AND type in (N'U'))
