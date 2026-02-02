@@ -46,13 +46,13 @@ if (-not $db) {
 $options = New-Object Microsoft.SqlServer.Management.Smo.ScriptingOptions
 $options.IncludeIfNotExists = $true
 $options.SchemaQualify = $true
-$options.IncludeHeaders = $true
+$options.IncludeHeaders = $false
 $options.DriAll = $true
 $options.Indexes = $true
 $options.NoCommandTerminator = $false
 
 # 結合ファイルクリア
-"-- DDL export generated on $(Get-Date -Format u)`n" | Out-File -FilePath $combinedFile -Encoding utf8 -Force
+"-- DDL export generated on $(Get-Date -Format u)`r`n" | Out-File -FilePath $combinedFile -Encoding utf8 -Force
 
 # テーブルの DDL を出力
 foreach ($table in $db.Tables | Where-Object { -not $_.IsSystemObject }) {
@@ -66,7 +66,7 @@ foreach ($table in $db.Tables | Where-Object { -not $_.IsSystemObject }) {
 #    $fileName = "{0}.{1}.table.sql" -f $schema, $name
     $fileName = "{0}.sql" -f $name
     $filePath = Join-Path $tablesDir $fileName
-    $header = "-- Table: $safeName`r`n" + "-- Generated: $(Get-Date -Format u)`r`n"
+    $header = "-- Table: $safeName`r`n"
     ($header + $script + "`r`n") | Out-File -FilePath $filePath -Encoding utf8 -Force
 
     # 結合ファイルに追記
@@ -151,7 +151,7 @@ foreach ($table in $db.Tables | Where-Object { -not $_.IsSystemObject }) {
         $script = $fk.Script($options) -join "`r`n"
         $fileName = "{0}.{1}.fk.sql" -f $table.Name, $fkName
         $filePath = Join-Path $fksDir $fileName
-        $header = "-- Foreign Key: $fkName (on $parent)`r`n-- Generated: $(Get-Date -Format u)`r`n"
+        $header = "-- Foreign Key: $fkName (on $parent)`r`n"
         ($header + $script + "`r`n") | Out-File -FilePath $filePath -Encoding utf8 -Force
 
         ($header + $script + "`r`n") | Out-File -FilePath $combinedFile -Encoding utf8 -Append
@@ -170,7 +170,7 @@ foreach ($table in $db.Tables | Where-Object { -not $_.IsSystemObject }) {
         $script = $index.Script($options) -join "`r`n"
         $fileName = "{0}.{1}.index.sql" -f $table.Name, $indexName
         $filePath = Join-Path $indexesDir $fileName
-        $header = "-- Index: $indexName (on $parent)`r`n-- Generated: $(Get-Date -Format u)`r`n"
+        $header = "-- Index: $indexName (on $parent)`r`n"
         ($header + $script + "`r`n") | Out-File -FilePath $filePath -Encoding utf8 -Force
 
         ($header + $script + "`r`n") | Out-File -FilePath $combinedFile -Encoding utf8 -Append
