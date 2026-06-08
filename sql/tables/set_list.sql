@@ -9,6 +9,10 @@ CREATE TABLE [dbo].[set_list](
 	[set_list_no] [int] NOT NULL,
 	[title] [nvarchar](256) COLLATE Japanese_CI_AS NOT NULL,
 	[song_id] [uniqueidentifier] NULL,
+	[singing] [bit] NOT NULL,
+	[medley] [bit] NOT NULL,
+	[cover] [bit] NOT NULL,
+	[part_type] [int] NOT NULL,
 	[created_at] [datetime] NOT NULL,
 	[modified_at] [datetime] NOT NULL,
  CONSTRAINT [PK_set_list] PRIMARY KEY CLUSTERED 
@@ -160,6 +164,114 @@ BEGIN
         @level0type=N'Schema', @level0name=N'dbo', 
         @level1type=N'Table',  @level1name=N'set_list', 
         @level2type=N'Column', @level2name=N'song_id';
+END
+GO
+
+-- Column comment: dbo.set_list.singing
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list' AND c.name = 'singing'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'歌唱フラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'singing';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'歌唱フラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'singing';
+END
+GO
+
+-- Column comment: dbo.set_list.medley
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list' AND c.name = 'medley'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'メドレーフラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'medley';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'メドレーフラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'medley';
+END
+GO
+
+-- Column comment: dbo.set_list.cover
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list' AND c.name = 'cover'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'カバーフラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'cover';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'カバーフラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'cover';
+END
+GO
+
+-- Column comment: dbo.set_list.part_type
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list' AND c.name = 'part_type'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'パート区分', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'part_type';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'パート区分', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'part_type';
 END
 GO
 
