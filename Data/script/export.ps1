@@ -1,3 +1,9 @@
+## エクスポートするディレクトリを決定する
+$exportDir = "../dat/"
+
+## コピー先のディレクトリを決定する
+$destinationDir = "C:\Users\shuns\source\fanaticServe\fanaticServe\DataSource\"
+
 ## テーブルデータをエクスポートする
 
 #テーブル名
@@ -15,6 +21,7 @@ $tables = @(
     , "live_event_note"
     , "media"
     , "organization"
+    , "part_type"
     , "person"
     , "role"
     , "roleOnAlbum"
@@ -36,9 +43,17 @@ $authType = "-T"  # Windows認証を使用する場合
 # 各テーブルをエクスポートする
 $tables | ForEach-Object {
     $tableName = $_
-    $outputFile = "../dat/$tableName.dat"
+    $outputFile = "$exportDir/$tableName.dat"
     $bcpCommand = "bcp $databaseName.dbo.$tableName out $outputFile -c -C 65001 -S $serverName $authType"
     
     Write-Output "Exporting table: $tableName to file: $outputFile"
     Invoke-Expression $bcpCommand
 }
+
+## コピー先のディレクトリにエクスポートしたファイルをコピーする
+Get-ChildItem -Path "$exportDir/*.dat" | ForEach-Object {
+    $sourceFile = $_.FullName
+    $destinationFile = Join-Path -Path $destinationDir -ChildPath $_.Name
+    Write-Output "Copying file: $sourceFile to $destinationFile"
+    Copy-Item -Path $sourceFile -Destination $destinationFile -Force
+}   

@@ -26,6 +26,11 @@ ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_live_event
 REFERENCES [dbo].[live_event] ([live_event_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
 ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_live_event]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_part]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
+ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_part] FOREIGN KEY([part_type])
+REFERENCES [dbo].[part] ([part_type])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_part]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
+ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_part]
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
 ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_song] FOREIGN KEY([song_id])
 REFERENCES [dbo].[song] ([song_id])

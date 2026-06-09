@@ -1,4 +1,4 @@
--- DDL export generated on 2026-01-08 00:06:59Z
+-- DDL export generated on 2026-06-09 21:37:59Z
 
 -- Table: dbo.abstract_album
 SET ANSI_NULLS ON
@@ -1938,6 +1938,131 @@ BEGIN
 END
 GO
 
+-- Table: dbo.part
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[part]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[part](
+	[part_type] [int] IDENTITY(1,1) NOT NULL,
+	[part_value] [nvarchar](50) COLLATE Japanese_CI_AS NOT NULL,
+	[created_at] [datetime] NOT NULL,
+	[modified_at] [datetime] NOT NULL,
+ CONSTRAINT [PK_part] PRIMARY KEY CLUSTERED 
+(
+	[part_type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+
+-- Column comment: dbo.part.part_type
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'part' AND c.name = 'part_type'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'パート区分', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'part', 
+        @level2type=N'Column', @level2name=N'part_type';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'パート区分', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'part', 
+        @level2type=N'Column', @level2name=N'part_type';
+END
+GO
+
+-- Column comment: dbo.part.part_value
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'part' AND c.name = 'part_value'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'パート値', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'part', 
+        @level2type=N'Column', @level2name=N'part_value';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'パート値', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'part', 
+        @level2type=N'Column', @level2name=N'part_value';
+END
+GO
+
+-- Column comment: dbo.part.created_at
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'part' AND c.name = 'created_at'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'登録日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'part', 
+        @level2type=N'Column', @level2name=N'created_at';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'登録日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'part', 
+        @level2type=N'Column', @level2name=N'created_at';
+END
+GO
+
+-- Column comment: dbo.part.modified_at
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'part' AND c.name = 'modified_at'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'更新日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'part', 
+        @level2type=N'Column', @level2name=N'modified_at';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'更新日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'part', 
+        @level2type=N'Column', @level2name=N'modified_at';
+END
+GO
+
 -- Table: dbo.person
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
@@ -2782,6 +2907,10 @@ CREATE TABLE [dbo].[set_list](
 	[set_list_no] [int] NOT NULL,
 	[title] [nvarchar](256) COLLATE Japanese_CI_AS NOT NULL,
 	[song_id] [uniqueidentifier] NULL,
+	[singing] [bit] NOT NULL,
+	[medley] [bit] NOT NULL,
+	[cover] [bit] NOT NULL,
+	[part_type] [int] NOT NULL,
 	[created_at] [datetime] NOT NULL,
 	[modified_at] [datetime] NOT NULL,
  CONSTRAINT [PK_set_list] PRIMARY KEY CLUSTERED 
@@ -2795,6 +2924,11 @@ ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_live_event
 REFERENCES [dbo].[live_event] ([live_event_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
 ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_live_event]
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_part]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
+ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_part] FOREIGN KEY([part_type])
+REFERENCES [dbo].[part] ([part_type])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_part]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
+ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_part]
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
 ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_song] FOREIGN KEY([song_id])
 REFERENCES [dbo].[song] ([song_id])
@@ -2936,6 +3070,114 @@ BEGIN
 END
 GO
 
+-- Column comment: dbo.set_list.singing
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list' AND c.name = 'singing'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'歌唱フラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'singing';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'歌唱フラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'singing';
+END
+GO
+
+-- Column comment: dbo.set_list.medley
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list' AND c.name = 'medley'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'メドレーフラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'medley';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'メドレーフラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'medley';
+END
+GO
+
+-- Column comment: dbo.set_list.cover
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list' AND c.name = 'cover'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'カバーフラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'cover';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'カバーフラグ', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'cover';
+END
+GO
+
+-- Column comment: dbo.set_list.part_type
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list' AND c.name = 'part_type'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'パート区分', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'part_type';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'パート区分', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list', 
+        @level2type=N'Column', @level2name=N'part_type';
+END
+GO
+
 -- Column comment: dbo.set_list.created_at
 IF EXISTS (
     SELECT 1 FROM sys.extended_properties ep
@@ -3025,7 +3267,7 @@ CREATE TABLE [dbo].[set_list_note](
 END
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note]  WITH CHECK ADD  CONSTRAINT [FK_set_list_note_set_list] FOREIGN KEY([set_list_id])
-REFERENCES [dbo].[set_list] ([set_list_id])
+REFERENCES [dbo].[set_list_old] ([set_list_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note] CHECK CONSTRAINT [FK_set_list_note_set_list]
 
@@ -3133,6 +3375,215 @@ BEGIN
         @value=N'更新日時', 
         @level0type=N'Schema', @level0name=N'dbo', 
         @level1type=N'Table',  @level1name=N'set_list_note', 
+        @level2type=N'Column', @level2name=N'modified_at';
+END
+GO
+
+-- Table: dbo.set_list_old
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[set_list_old]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[set_list_old](
+	[set_list_id] [uniqueidentifier] NOT NULL,
+	[live_event_id] [uniqueidentifier] NOT NULL,
+	[set_list_no] [int] NOT NULL,
+	[title] [nvarchar](256) COLLATE Japanese_CI_AS NOT NULL,
+	[song_id] [uniqueidentifier] NULL,
+	[created_at] [datetime] NOT NULL,
+	[modified_at] [datetime] NOT NULL,
+ CONSTRAINT [PK_set_list_old] PRIMARY KEY CLUSTERED 
+(
+	[set_list_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+
+-- Column comment: dbo.set_list_old.set_list_id
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'set_list_id'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'セットリストID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'set_list_id';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'セットリストID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'set_list_id';
+END
+GO
+
+-- Column comment: dbo.set_list_old.live_event_id
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'live_event_id'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'イベントID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'live_event_id';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'イベントID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'live_event_id';
+END
+GO
+
+-- Column comment: dbo.set_list_old.set_list_no
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'set_list_no'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'曲順', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'set_list_no';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'曲順', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'set_list_no';
+END
+GO
+
+-- Column comment: dbo.set_list_old.title
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'title'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'タイトル', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'title';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'タイトル', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'title';
+END
+GO
+
+-- Column comment: dbo.set_list_old.song_id
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'song_id'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'楽曲ID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'song_id';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'楽曲ID', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'song_id';
+END
+GO
+
+-- Column comment: dbo.set_list_old.created_at
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'created_at'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'登録日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'created_at';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'登録日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'created_at';
+END
+GO
+
+-- Column comment: dbo.set_list_old.modified_at
+IF EXISTS (
+    SELECT 1 FROM sys.extended_properties ep
+    JOIN sys.tables t ON t.object_id = ep.major_id
+    JOIN sys.schemas s ON t.schema_id = s.schema_id
+    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
+    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'modified_at'
+)
+BEGIN
+    EXEC sp_updateextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'更新日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
+        @level2type=N'Column', @level2name=N'modified_at';
+END
+ELSE
+BEGIN
+    EXEC sp_addextendedproperty 
+        @name=N'MS_Description', 
+        @value=N'更新日時', 
+        @level0type=N'Schema', @level0name=N'dbo', 
+        @level1type=N'Table',  @level1name=N'set_list_old', 
         @level2type=N'Column', @level2name=N'modified_at';
 END
 GO
@@ -4119,6 +4570,13 @@ REFERENCES [dbo].[live_event] ([live_event_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
 ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_live_event]
 
+-- Foreign Key: FK_set_list_part (on dbo.set_list)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_part]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
+ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_part] FOREIGN KEY([part_type])
+REFERENCES [dbo].[part] ([part_type])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_part]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
+ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_part]
+
 -- Foreign Key: FK_set_list_song (on dbo.set_list)
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_song]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list]'))
 ALTER TABLE [dbo].[set_list]  WITH CHECK ADD  CONSTRAINT [FK_set_list_song] FOREIGN KEY([song_id])
@@ -4129,7 +4587,7 @@ ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_song]
 -- Foreign Key: FK_set_list_note_set_list (on dbo.set_list_note)
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note]  WITH CHECK ADD  CONSTRAINT [FK_set_list_note_set_list] FOREIGN KEY([set_list_id])
-REFERENCES [dbo].[set_list] ([set_list_id])
+REFERENCES [dbo].[set_list_old] ([set_list_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note] CHECK CONSTRAINT [FK_set_list_note_set_list]
 
@@ -4261,6 +4719,13 @@ ALTER TABLE [dbo].[organization] ADD  CONSTRAINT [PK_organization] PRIMARY KEY C
 	[organization_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
+-- Index: PK_part (on dbo.part)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[part]') AND name = N'PK_part')
+ALTER TABLE [dbo].[part] ADD  CONSTRAINT [PK_part] PRIMARY KEY CLUSTERED 
+(
+	[part_type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
 -- Index: PK_person (on dbo.person)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[person]') AND name = N'PK_person')
 ALTER TABLE [dbo].[person] ADD  CONSTRAINT [PK_person] PRIMARY KEY CLUSTERED 
@@ -4333,6 +4798,13 @@ ALTER TABLE [dbo].[set_list] ADD  CONSTRAINT [PK_set_list] PRIMARY KEY CLUSTERED
 -- Index: PK_set_list_note (on dbo.set_list_note)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list_note]') AND name = N'PK_set_list_note')
 ALTER TABLE [dbo].[set_list_note] ADD  CONSTRAINT [PK_set_list_note] PRIMARY KEY CLUSTERED 
+(
+	[set_list_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+-- Index: PK_set_list_old (on dbo.set_list_old)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list_old]') AND name = N'PK_set_list_old')
+ALTER TABLE [dbo].[set_list_old] ADD  CONSTRAINT [PK_set_list_old] PRIMARY KEY CLUSTERED 
 (
 	[set_list_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
