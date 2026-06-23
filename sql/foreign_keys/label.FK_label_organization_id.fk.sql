@@ -1,4 +1,4 @@
--- Foreign Key: FK_label_organization_id (on dbo.label)
+﻿-- Foreign Key: FK_label_organization_id (on dbo.label)
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_label_organization_id]') AND parent_object_id = OBJECT_ID(N'[dbo].[label]'))
 ALTER TABLE [dbo].[label]  WITH CHECK ADD  CONSTRAINT [FK_label_organization_id] FOREIGN KEY([organization_id])
 REFERENCES [dbo].[organization] ([organization_id])

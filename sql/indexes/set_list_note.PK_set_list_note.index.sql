@@ -1,4 +1,4 @@
--- Index: PK_set_list_note (on dbo.set_list_note)
+﻿-- Index: PK_set_list_note (on dbo.set_list_note)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list_note]') AND name = N'PK_set_list_note')
 ALTER TABLE [dbo].[set_list_note] ADD  CONSTRAINT [PK_set_list_note] PRIMARY KEY CLUSTERED 
 (

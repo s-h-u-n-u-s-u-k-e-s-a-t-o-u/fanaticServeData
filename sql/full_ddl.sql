@@ -1,4 +1,4 @@
--- DDL export generated on 2026-06-09 21:37:59Z
+﻿-- DDL export generated on 2026-06-23 09:35:10Z
 
 -- Table: dbo.abstract_album
 SET ANSI_NULLS ON
@@ -1709,6 +1709,30 @@ BEGIN
 END
 GO
 
+-- Table: dbo.live_event_url
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[live_event_url]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[live_event_url](
+	[live_event_url_id] [int] IDENTITY(1,1) NOT NULL,
+	[live_event_id] [uniqueidentifier] NOT NULL,
+	[url] [nvarchar](max) COLLATE Japanese_CI_AS NOT NULL,
+	[description] [nvarchar](50) COLLATE Japanese_CI_AS NULL,
+	[created_at] [datetime] NOT NULL,
+	[modified_At] [datetime] NOT NULL,
+ CONSTRAINT [PK_live_event_url] PRIMARY KEY CLUSTERED 
+(
+	[live_event_url_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_live_event_url_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[live_event_url]'))
+ALTER TABLE [dbo].[live_event_url]  WITH CHECK ADD  CONSTRAINT [FK_live_event_url_live_event] FOREIGN KEY([live_event_id])
+REFERENCES [dbo].[live_event] ([live_event_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_live_event_url_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[live_event_url]'))
+ALTER TABLE [dbo].[live_event_url] CHECK CONSTRAINT [FK_live_event_url_live_event]
+
 -- Table: dbo.media
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
@@ -3232,23 +3256,6 @@ BEGIN
 END
 GO
 
--- Table: dbo.set_list_dummy
-SET ANSI_NULLS ON
-SET QUOTED_IDENTIFIER ON
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[set_list_dummy]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[set_list_dummy](
-	[set_list_id] [uniqueidentifier] NULL,
-	[live_event_id] [uniqueidentifier] NULL,
-	[set_list_no] [int] NULL,
-	[title] [nvarchar](256) COLLATE Japanese_CI_AS NULL,
-	[song_id] [uniqueidentifier] NULL,
-	[created_at] [datetime] NOT NULL,
-	[modified_at] [datetime] NOT NULL,
-	[note] [nvarchar](max) COLLATE Japanese_CI_AS NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-END
-
 -- Table: dbo.set_list_note
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
@@ -3267,7 +3274,7 @@ CREATE TABLE [dbo].[set_list_note](
 END
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note]  WITH CHECK ADD  CONSTRAINT [FK_set_list_note_set_list] FOREIGN KEY([set_list_id])
-REFERENCES [dbo].[set_list_old] ([set_list_id])
+REFERENCES [dbo].[set_list] ([set_list_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note] CHECK CONSTRAINT [FK_set_list_note_set_list]
 
@@ -3375,215 +3382,6 @@ BEGIN
         @value=N'更新日時', 
         @level0type=N'Schema', @level0name=N'dbo', 
         @level1type=N'Table',  @level1name=N'set_list_note', 
-        @level2type=N'Column', @level2name=N'modified_at';
-END
-GO
-
--- Table: dbo.set_list_old
-SET ANSI_NULLS ON
-SET QUOTED_IDENTIFIER ON
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[set_list_old]') AND type in (N'U'))
-BEGIN
-CREATE TABLE [dbo].[set_list_old](
-	[set_list_id] [uniqueidentifier] NOT NULL,
-	[live_event_id] [uniqueidentifier] NOT NULL,
-	[set_list_no] [int] NOT NULL,
-	[title] [nvarchar](256) COLLATE Japanese_CI_AS NOT NULL,
-	[song_id] [uniqueidentifier] NULL,
-	[created_at] [datetime] NOT NULL,
-	[modified_at] [datetime] NOT NULL,
- CONSTRAINT [PK_set_list_old] PRIMARY KEY CLUSTERED 
-(
-	[set_list_id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-END
-
--- Column comment: dbo.set_list_old.set_list_id
-IF EXISTS (
-    SELECT 1 FROM sys.extended_properties ep
-    JOIN sys.tables t ON t.object_id = ep.major_id
-    JOIN sys.schemas s ON t.schema_id = s.schema_id
-    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
-    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'set_list_id'
-)
-BEGIN
-    EXEC sp_updateextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'セットリストID', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'set_list_id';
-END
-ELSE
-BEGIN
-    EXEC sp_addextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'セットリストID', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'set_list_id';
-END
-GO
-
--- Column comment: dbo.set_list_old.live_event_id
-IF EXISTS (
-    SELECT 1 FROM sys.extended_properties ep
-    JOIN sys.tables t ON t.object_id = ep.major_id
-    JOIN sys.schemas s ON t.schema_id = s.schema_id
-    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
-    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'live_event_id'
-)
-BEGIN
-    EXEC sp_updateextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'イベントID', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'live_event_id';
-END
-ELSE
-BEGIN
-    EXEC sp_addextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'イベントID', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'live_event_id';
-END
-GO
-
--- Column comment: dbo.set_list_old.set_list_no
-IF EXISTS (
-    SELECT 1 FROM sys.extended_properties ep
-    JOIN sys.tables t ON t.object_id = ep.major_id
-    JOIN sys.schemas s ON t.schema_id = s.schema_id
-    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
-    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'set_list_no'
-)
-BEGIN
-    EXEC sp_updateextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'曲順', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'set_list_no';
-END
-ELSE
-BEGIN
-    EXEC sp_addextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'曲順', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'set_list_no';
-END
-GO
-
--- Column comment: dbo.set_list_old.title
-IF EXISTS (
-    SELECT 1 FROM sys.extended_properties ep
-    JOIN sys.tables t ON t.object_id = ep.major_id
-    JOIN sys.schemas s ON t.schema_id = s.schema_id
-    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
-    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'title'
-)
-BEGIN
-    EXEC sp_updateextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'タイトル', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'title';
-END
-ELSE
-BEGIN
-    EXEC sp_addextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'タイトル', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'title';
-END
-GO
-
--- Column comment: dbo.set_list_old.song_id
-IF EXISTS (
-    SELECT 1 FROM sys.extended_properties ep
-    JOIN sys.tables t ON t.object_id = ep.major_id
-    JOIN sys.schemas s ON t.schema_id = s.schema_id
-    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
-    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'song_id'
-)
-BEGIN
-    EXEC sp_updateextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'楽曲ID', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'song_id';
-END
-ELSE
-BEGIN
-    EXEC sp_addextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'楽曲ID', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'song_id';
-END
-GO
-
--- Column comment: dbo.set_list_old.created_at
-IF EXISTS (
-    SELECT 1 FROM sys.extended_properties ep
-    JOIN sys.tables t ON t.object_id = ep.major_id
-    JOIN sys.schemas s ON t.schema_id = s.schema_id
-    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
-    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'created_at'
-)
-BEGIN
-    EXEC sp_updateextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'登録日時', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'created_at';
-END
-ELSE
-BEGIN
-    EXEC sp_addextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'登録日時', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'created_at';
-END
-GO
-
--- Column comment: dbo.set_list_old.modified_at
-IF EXISTS (
-    SELECT 1 FROM sys.extended_properties ep
-    JOIN sys.tables t ON t.object_id = ep.major_id
-    JOIN sys.schemas s ON t.schema_id = s.schema_id
-    JOIN sys.columns c ON c.object_id = t.object_id AND c.column_id = ep.minor_id
-    WHERE ep.name = 'MS_Description' AND s.name = 'dbo' AND t.name = 'set_list_old' AND c.name = 'modified_at'
-)
-BEGIN
-    EXEC sp_updateextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'更新日時', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
-        @level2type=N'Column', @level2name=N'modified_at';
-END
-ELSE
-BEGIN
-    EXEC sp_addextendedproperty 
-        @name=N'MS_Description', 
-        @value=N'更新日時', 
-        @level0type=N'Schema', @level0name=N'dbo', 
-        @level1type=N'Table',  @level1name=N'set_list_old', 
         @level2type=N'Column', @level2name=N'modified_at';
 END
 GO
@@ -4500,6 +4298,13 @@ REFERENCES [dbo].[live_event] ([live_event_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_live_event_note_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[live_event_note]'))
 ALTER TABLE [dbo].[live_event_note] CHECK CONSTRAINT [FK_live_event_note_live_event]
 
+-- Foreign Key: FK_live_event_url_live_event (on dbo.live_event_url)
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_live_event_url_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[live_event_url]'))
+ALTER TABLE [dbo].[live_event_url]  WITH CHECK ADD  CONSTRAINT [FK_live_event_url_live_event] FOREIGN KEY([live_event_id])
+REFERENCES [dbo].[live_event] ([live_event_id])
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_live_event_url_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[live_event_url]'))
+ALTER TABLE [dbo].[live_event_url] CHECK CONSTRAINT [FK_live_event_url_live_event]
+
 -- Foreign Key: FK_roleOnAlbum_album (on dbo.roleOnAlbum)
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_roleOnAlbum_album]') AND parent_object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]'))
 ALTER TABLE [dbo].[roleOnAlbum]  WITH CHECK ADD  CONSTRAINT [FK_roleOnAlbum_album] FOREIGN KEY([album_id])
@@ -4587,7 +4392,7 @@ ALTER TABLE [dbo].[set_list] CHECK CONSTRAINT [FK_set_list_song]
 -- Foreign Key: FK_set_list_note_set_list (on dbo.set_list_note)
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note]  WITH CHECK ADD  CONSTRAINT [FK_set_list_note_set_list] FOREIGN KEY([set_list_id])
-REFERENCES [dbo].[set_list_old] ([set_list_id])
+REFERENCES [dbo].[set_list] ([set_list_id])
 IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_set_list_note_set_list]') AND parent_object_id = OBJECT_ID(N'[dbo].[set_list_note]'))
 ALTER TABLE [dbo].[set_list_note] CHECK CONSTRAINT [FK_set_list_note_set_list]
 
@@ -4705,6 +4510,13 @@ ALTER TABLE [dbo].[live_event_note] ADD  CONSTRAINT [PK_live_event_note] PRIMARY
 	[live_event_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
+-- Index: PK_live_event_url (on dbo.live_event_url)
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[live_event_url]') AND name = N'PK_live_event_url')
+ALTER TABLE [dbo].[live_event_url] ADD  CONSTRAINT [PK_live_event_url] PRIMARY KEY CLUSTERED 
+(
+	[live_event_url_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
 -- Index: PK_media (on dbo.media)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[media]') AND name = N'PK_media')
 ALTER TABLE [dbo].[media] ADD  CONSTRAINT [PK_media] PRIMARY KEY CLUSTERED 
@@ -4798,13 +4610,6 @@ ALTER TABLE [dbo].[set_list] ADD  CONSTRAINT [PK_set_list] PRIMARY KEY CLUSTERED
 -- Index: PK_set_list_note (on dbo.set_list_note)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list_note]') AND name = N'PK_set_list_note')
 ALTER TABLE [dbo].[set_list_note] ADD  CONSTRAINT [PK_set_list_note] PRIMARY KEY CLUSTERED 
-(
-	[set_list_id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-
--- Index: PK_set_list_old (on dbo.set_list_old)
-IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list_old]') AND name = N'PK_set_list_old')
-ALTER TABLE [dbo].[set_list_old] ADD  CONSTRAINT [PK_set_list_old] PRIMARY KEY CLUSTERED 
 (
 	[set_list_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]

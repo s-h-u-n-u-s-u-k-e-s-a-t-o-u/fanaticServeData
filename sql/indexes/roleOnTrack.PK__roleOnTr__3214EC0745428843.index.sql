@@ -1,4 +1,4 @@
--- Index: PK__roleOnTr__3214EC0745428843 (on dbo.roleOnTrack)
+﻿-- Index: PK__roleOnTr__3214EC0745428843 (on dbo.roleOnTrack)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnTrack]') AND name = N'PK__roleOnTr__3214EC0745428843')
 ALTER TABLE [dbo].[roleOnTrack] ADD PRIMARY KEY CLUSTERED 
 (

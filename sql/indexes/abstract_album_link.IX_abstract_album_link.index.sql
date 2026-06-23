@@ -1,4 +1,4 @@
--- Index: IX_abstract_album_link (on dbo.abstract_album_link)
+﻿-- Index: IX_abstract_album_link (on dbo.abstract_album_link)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_link]') AND name = N'IX_abstract_album_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_album_link] ON [dbo].[abstract_album_link]
 (

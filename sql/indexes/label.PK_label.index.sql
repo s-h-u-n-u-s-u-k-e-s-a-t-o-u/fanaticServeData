@@ -1,4 +1,4 @@
--- Index: PK_label (on dbo.label)
+﻿-- Index: PK_label (on dbo.label)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[label]') AND name = N'PK_label')
 ALTER TABLE [dbo].[label] ADD  CONSTRAINT [PK_label] PRIMARY KEY CLUSTERED 
 (

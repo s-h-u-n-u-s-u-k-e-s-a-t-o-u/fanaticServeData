@@ -1,4 +1,4 @@
--- Index: PK_abstract_event (on dbo.abstract_event)
+﻿-- Index: PK_abstract_event (on dbo.abstract_event)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event]') AND name = N'PK_abstract_event')
 ALTER TABLE [dbo].[abstract_event] ADD  CONSTRAINT [PK_abstract_event] PRIMARY KEY CLUSTERED 
 (

@@ -1,4 +1,4 @@
--- Index: PK_organization (on dbo.organization)
+﻿-- Index: PK_organization (on dbo.organization)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[organization]') AND name = N'PK_organization')
 ALTER TABLE [dbo].[organization] ADD  CONSTRAINT [PK_organization] PRIMARY KEY CLUSTERED 
 (

@@ -1,4 +1,4 @@
--- Index: PK_site (on dbo.site)
+﻿-- Index: PK_site (on dbo.site)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[site]') AND name = N'PK_site')
 ALTER TABLE [dbo].[site] ADD  CONSTRAINT [PK_site] PRIMARY KEY CLUSTERED 
 (

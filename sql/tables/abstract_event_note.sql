@@ -1,4 +1,4 @@
--- Table: dbo.abstract_event_note
+﻿-- Table: dbo.abstract_event_note
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_note]') AND type in (N'U'))

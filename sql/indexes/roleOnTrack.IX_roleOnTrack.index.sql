@@ -1,4 +1,4 @@
--- Index: IX_roleOnTrack (on dbo.roleOnTrack)
+﻿-- Index: IX_roleOnTrack (on dbo.roleOnTrack)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnTrack]') AND name = N'IX_roleOnTrack')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnTrack] ON [dbo].[roleOnTrack]
 (

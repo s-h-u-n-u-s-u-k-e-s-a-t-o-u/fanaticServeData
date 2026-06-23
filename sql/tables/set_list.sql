@@ -1,4 +1,4 @@
--- Table: dbo.set_list
+﻿-- Table: dbo.set_list
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[set_list]') AND type in (N'U'))

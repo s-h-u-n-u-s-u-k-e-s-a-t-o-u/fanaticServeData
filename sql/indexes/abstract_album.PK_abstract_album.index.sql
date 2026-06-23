@@ -1,4 +1,4 @@
--- Index: PK_abstract_album (on dbo.abstract_album)
+﻿-- Index: PK_abstract_album (on dbo.abstract_album)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album]') AND name = N'PK_abstract_album')
 ALTER TABLE [dbo].[abstract_album] ADD  CONSTRAINT [PK_abstract_album] PRIMARY KEY CLUSTERED 
 (

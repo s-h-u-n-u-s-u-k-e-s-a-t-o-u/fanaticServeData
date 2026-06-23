@@ -1,4 +1,4 @@
--- Index: PK_role (on dbo.role)
+﻿-- Index: PK_role (on dbo.role)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[role]') AND name = N'PK_role')
 ALTER TABLE [dbo].[role] ADD  CONSTRAINT [PK_role] PRIMARY KEY CLUSTERED 
 (

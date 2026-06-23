@@ -1,4 +1,4 @@
--- Table: dbo.live_event
+﻿-- Table: dbo.live_event
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[live_event]') AND type in (N'U'))

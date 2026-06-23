@@ -1,4 +1,4 @@
--- Index: PK_set_list (on dbo.set_list)
+﻿-- Index: PK_set_list (on dbo.set_list)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[set_list]') AND name = N'PK_set_list')
 ALTER TABLE [dbo].[set_list] ADD  CONSTRAINT [PK_set_list] PRIMARY KEY CLUSTERED 
 (

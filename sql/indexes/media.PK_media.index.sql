@@ -1,4 +1,4 @@
--- Index: PK_media (on dbo.media)
+﻿-- Index: PK_media (on dbo.media)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[media]') AND name = N'PK_media')
 ALTER TABLE [dbo].[media] ADD  CONSTRAINT [PK_media] PRIMARY KEY CLUSTERED 
 (
