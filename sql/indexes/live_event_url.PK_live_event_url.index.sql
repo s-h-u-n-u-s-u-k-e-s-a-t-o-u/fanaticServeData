@@ -1,4 +1,4 @@
-﻿-- Index: PK_live_event_url (on dbo.live_event_url)
+-- Index: PK_live_event_url (on dbo.live_event_url)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[live_event_url]') AND name = N'PK_live_event_url')
 ALTER TABLE [dbo].[live_event_url] ADD  CONSTRAINT [PK_live_event_url] PRIMARY KEY CLUSTERED 
 (

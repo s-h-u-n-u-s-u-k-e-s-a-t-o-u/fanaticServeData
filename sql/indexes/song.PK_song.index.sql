@@ -1,4 +1,4 @@
-﻿-- Index: PK_song (on dbo.song)
+-- Index: PK_song (on dbo.song)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[song]') AND name = N'PK_song')
 ALTER TABLE [dbo].[song] ADD  CONSTRAINT [PK_song] PRIMARY KEY CLUSTERED 
 (

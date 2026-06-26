@@ -1,4 +1,4 @@
-﻿-- DDL export generated on 2026-06-23 09:35:10Z
+-- DDL export generated on 2026-06-26 22:41:54Z
 
 -- Table: dbo.abstract_album
 SET ANSI_NULLS ON

@@ -1,4 +1,4 @@
-﻿-- Table: dbo.song_note
+-- Table: dbo.song_note
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[song_note]') AND type in (N'U'))

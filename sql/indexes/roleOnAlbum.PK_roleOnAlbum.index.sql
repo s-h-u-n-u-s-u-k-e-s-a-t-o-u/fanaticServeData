@@ -1,4 +1,4 @@
-﻿-- Index: PK_roleOnAlbum (on dbo.roleOnAlbum)
+-- Index: PK_roleOnAlbum (on dbo.roleOnAlbum)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnAlbum]') AND name = N'PK_roleOnAlbum')
 ALTER TABLE [dbo].[roleOnAlbum] ADD  CONSTRAINT [PK_roleOnAlbum] PRIMARY KEY CLUSTERED 
 (

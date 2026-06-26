@@ -1,4 +1,4 @@
-﻿-- Table: dbo.abstract_album_link
+-- Table: dbo.abstract_album_link
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[abstract_album_link]') AND type in (N'U'))

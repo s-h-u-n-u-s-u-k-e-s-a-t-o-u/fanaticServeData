@@ -1,4 +1,4 @@
-﻿-- Index: PK_track (on dbo.track)
+-- Index: PK_track (on dbo.track)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[track]') AND name = N'PK_track')
 ALTER TABLE [dbo].[track] ADD  CONSTRAINT [PK_track] PRIMARY KEY CLUSTERED 
 (

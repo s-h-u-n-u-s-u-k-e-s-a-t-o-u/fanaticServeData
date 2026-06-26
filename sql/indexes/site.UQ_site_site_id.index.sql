@@ -1,4 +1,4 @@
-﻿-- Index: UQ_site_site_id (on dbo.site)
+-- Index: UQ_site_site_id (on dbo.site)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[site]') AND name = N'UQ_site_site_id')
 ALTER TABLE [dbo].[site] ADD  CONSTRAINT [UQ_site_site_id] UNIQUE NONCLUSTERED 
 (

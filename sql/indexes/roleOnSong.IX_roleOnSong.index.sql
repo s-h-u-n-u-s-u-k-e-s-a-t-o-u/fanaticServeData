@@ -1,4 +1,4 @@
-﻿-- Index: IX_roleOnSong (on dbo.roleOnSong)
+-- Index: IX_roleOnSong (on dbo.roleOnSong)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[roleOnSong]') AND name = N'IX_roleOnSong')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_roleOnSong] ON [dbo].[roleOnSong]
 (

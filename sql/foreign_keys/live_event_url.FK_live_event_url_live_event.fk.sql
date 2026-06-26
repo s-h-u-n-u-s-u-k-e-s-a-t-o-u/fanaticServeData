@@ -1,4 +1,4 @@
-﻿-- Foreign Key: FK_live_event_url_live_event (on dbo.live_event_url)
+-- Foreign Key: FK_live_event_url_live_event (on dbo.live_event_url)
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_live_event_url_live_event]') AND parent_object_id = OBJECT_ID(N'[dbo].[live_event_url]'))
 ALTER TABLE [dbo].[live_event_url]  WITH CHECK ADD  CONSTRAINT [FK_live_event_url_live_event] FOREIGN KEY([live_event_id])
 REFERENCES [dbo].[live_event] ([live_event_id])

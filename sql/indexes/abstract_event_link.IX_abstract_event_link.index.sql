@@ -1,4 +1,4 @@
-﻿-- Index: IX_abstract_event_link (on dbo.abstract_event_link)
+-- Index: IX_abstract_event_link (on dbo.abstract_event_link)
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[abstract_event_link]') AND name = N'IX_abstract_event_link')
 CREATE UNIQUE NONCLUSTERED INDEX [IX_abstract_event_link] ON [dbo].[abstract_event_link]
 (
